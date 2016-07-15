@@ -1,6 +1,7 @@
 function navigationItems(Navigation) {
   return {
     restrict: 'A',
+    replace: true,
     templateUrl: 'app/core/common/directives/navigation/navigation.tpl.html',
     link: function (scope, attr, elem, ctrl) {
        scope.navigation = Navigation.getNavigation();

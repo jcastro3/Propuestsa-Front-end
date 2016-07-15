@@ -11,7 +11,7 @@
 
 
 function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, CORE_CONFIG, NavigationProvider) {
-    $urlRouterProvider.otherwise("/mop/core");
+    $urlRouterProvider.otherwise("/mop/dashboard");
   NavigationProvider.setNavigation(CORE_CONFIG);
   $ocLazyLoadProvider.config({
       // Set to true if you want to see what and when is dynamically loaded
@@ -56,17 +56,20 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, CORE_CO
     
     var route =  {
       url: config.url,
-      templateUrl: config.templateUrl,
       data: {
         pageTitle: config.title
       }
     };
-    
-    route.view = {};
-    route.view[config.view] = {
-      controller: config.controller,
+
+    route.views = {};
+    route.views[config.view] = {
+      templateUrl: config.templateUrl,
       permission: config.permission
     };
+    
+    if(config.hasOwnProperty('controller')) {
+      route.controller = config.controller;
+    }
     
     return route;
   }
@@ -86,7 +89,6 @@ function MainCtrl($scope) {
 
 config.$inject = ['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', 'CORE_CONFIG', 'NavigationProvider'];
 run.$inject = ['$rootScope', '$state'];
-MainCtrl.$inject = ['$scope'];
 Navigation.$inject = [];
 
 

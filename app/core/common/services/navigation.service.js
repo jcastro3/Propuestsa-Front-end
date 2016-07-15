@@ -13,7 +13,6 @@ function Navigation() {
       };
     } 
   };
-  
 }
 
 Navigation.$inject = [];

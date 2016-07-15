@@ -1,10 +1,10 @@
-<li data-ng-class="{ active: $state.includes(item.sref)}" data-ng-repeat="item in navigation" ui-sref-active="active">
+<li data-ng-class="{ active: $state.includes(item.sref) }" data-ng-repeat="item in navigation">
   <a data-ui-sref="{{ item.sref }}">
     <i class="fa fa-desktop"></i>
     <span class="nav-label">{{ item.title }}</span>
   </a>
-  <ul data-ng-if="item.nested && item.nested.length">
-    <li data-ng-repeat="sub in item.nested">
+  <ul class="nav nav-second-level collapse" data-ng-if="item.nested && item.nested.length">
+    <li data-ng-repeat="sub in item.nested" ui-sref-active="active">
       <a data-ui-sref="{{ sub.sref }}">
         <i class="fa fa-desktop"></i>
         <span class="nav-label"> {{ nested.title }}</span>
@@ -12,13 +12,3 @@
     </li>
   </ul>
 </li>
-
-<!-- <li ng-class="{active: $state.includes('mailbox')}">
-    <a ui-sref="inbox"><i class="fa fa-envelope"></i> <span class="nav-label">{{ 'MAILBOX' | translate }} </span><span class="label label-warning pull-right">16/24</span></a>
-    <ul class="nav nav-second-level collapse" ng-class="{in: $state.includes('mailbox')}">
-        <li ui-sref-active="active"><a ui-sref="mailbox.inbox">Inbox</a></li>
-        <li ui-sref-active="active"><a ui-sref="mailbox.email_view">Email view</a></li>
-        <li ui-sref-active="active"><a ui-sref="mailbox.email_compose">Compose email</a></li>
-        <li ui-sref-active="active"><a ui-sref="mailbox.email_template">Email template</a></li>
-    </ul>
-</li> -->
