@@ -55,7 +55,7 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, CORE_CO
     //some might not include the same parameters of configuration e.g. abstract, controller, url.
     
     var route =  {
-      url: config.url,
+      browser_url: config.browser_url,
       data: {
         pageTitle: config.title
       }
