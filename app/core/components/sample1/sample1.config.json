@@ -26,7 +26,7 @@
          "module": "mop.sample1.sub1",
          "controller": "Sample1Sub1Ctrl",
          "templateUrl": "app/core/components/sample1/views/sample1.sub1.view.html",
-         "url": "/sample1_sub1",
+         "browser_url": "/sample1_sub1",
          "sref": "mop.sample1.sub1",
          "view": "subview-mop",
          "permission": [
@@ -39,7 +39,7 @@
          "module": "mop.sample1.sub2",
          "controller": "Sample1Sub2Ctrl",
          "templateUrl": "app/core/components/sample1/views/sample1.sub2.view.html",
-         "url": "/sample1_sub2",
+         "browser_url": "/sample1_sub2",
          "sref": "mop.sample1.sub2",
          "view": "subview-mop",
          "permission": [
