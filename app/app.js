@@ -2,7 +2,11 @@
   'use strict';
   angular
     .module('mop', [
-        'core',                          // core
+        'core',
+        'core.sample1',                          // core
+        'core.sample1.sub1',                          // core
+        'core.sample2',                          // core
+        'core.sample2.sub2',                          // core
         'ui.router',                    // Routing
         'oc.lazyLoad',                  // ocLazyLoad
         'ui.bootstrap'                  // ngSanitize
@@ -14,14 +18,16 @@
   }).done(boostrapAngular);
     
   function boostrapAngular(data) {
-    console.log(data);
     angular
       .module('mop')
       .constant('CORE_CONFIG', data);
       
-    angular.element(document).ready(function() {
-      angular.bootstrap(document.getElementsByTagName('html'), ['mop']);
-    });
+      setTimeout(angular.element(document).ready(function() {
+        angular.bootstrap(document.getElementsByTagName('html'), ['mop']);
+      }),3000);
   }
 
 })($, angular);
+
+
+

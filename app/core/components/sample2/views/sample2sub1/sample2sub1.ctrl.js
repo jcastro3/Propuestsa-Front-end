@@ -3,6 +3,6 @@ function Sample2Sub1Ctrl($scope) {
 }
 
 angular
-  .module('mop.sample2.sub1', [])
+  .module('core.sample2.sub1', [])
   .controller('Sample2Sub1Ctrl', Sample2Sub1Ctrl);
   

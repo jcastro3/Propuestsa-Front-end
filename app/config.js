@@ -10,14 +10,14 @@
 
 
 
-function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, CORE_CONFIG, NavigationProvider) {
-    $urlRouterProvider.otherwise("/mop/dashboard");
+function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, $locationProvider, CORE_CONFIG, NavigationProvider) {
+    $urlRouterProvider.otherwise("/mop/sample1");
   NavigationProvider.setNavigation(CORE_CONFIG);
   $ocLazyLoadProvider.config({
       // Set to true if you want to see what and when is dynamically loaded
       debug: false
   });
-
+  console.log('im faster');
   $stateProvider
     .state('mop', {
         abstract: true,
@@ -55,7 +55,7 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, CORE_CO
     //some might not include the same parameters of configuration e.g. abstract, controller, url.
     
     var route =  {
-      browser_url: config.browser_url,
+      browser_url: config.as,
       data: {
         pageTitle: config.title
       }
@@ -73,7 +73,7 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, CORE_CO
     
     return route;
   }
-  
+    
 }
 
 function run($rootScope, $state) {
@@ -87,7 +87,7 @@ function MainCtrl($scope) {
   
 }
 
-config.$inject = ['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', 'CORE_CONFIG', 'NavigationProvider'];
+config.$inject = ['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$locationProvider', 'CORE_CONFIG', 'NavigationProvider'];
 run.$inject = ['$rootScope', '$state'];
 Navigation.$inject = [];
 
