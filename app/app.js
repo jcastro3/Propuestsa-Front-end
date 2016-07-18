@@ -13,7 +13,7 @@
     ]);
   
   $.ajax({
-    url: 'http://www.mocky.io/v2/57889a250f00002f1dbd16d1',
+    url: 'http://www.mocky.io/v2/578c7bf40f0000141b37086b',
     method: 'GET'
   }).done(boostrapAngular);
     
@@ -22,12 +22,9 @@
       .module('mop')
       .constant('CORE_CONFIG', data);
       
-      setTimeout(angular.element(document).ready(function() {
-        angular.bootstrap(document.getElementsByTagName('html'), ['mop']);
-      }),3000);
+    angular.element(document).ready(function() {
+      angular.bootstrap(document.getElementsByTagName('html'), ['mop']);
+    });
   }
 
 })($, angular);
-
-
-
