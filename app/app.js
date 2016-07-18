@@ -2,11 +2,7 @@
   'use strict';
   angular
     .module('mop', [
-        'core',
-        'core.sample1',                          // core
-        'core.sample1.sub1',                          // core
-        'core.sample2',                          // core
-        'core.sample2.sub2',                          // core
+        'core',                          // core
         'ui.router',                    // Routing
         'oc.lazyLoad',                  // ocLazyLoad
         'ui.bootstrap'                  // ngSanitize
